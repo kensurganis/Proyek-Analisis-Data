@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Proyek Analisis Data Bike</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 40px;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      headeh,
+      section,
+      footer {
+        background: white;
+        padding: 20px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        color: #0056b3;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      code {
+        background-color: #eef;
+        padding: 5px;
+        display: block;
+        margin: 10px 0;
+        white-space: pre-wrap;
+        border-left: 3px solid #0056b3;
+      }
+
+      footer p {
+        font-size: 0.9em;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Proyek Analisis Data Bike</h1>
+      <p>Nama : Kens Urganis Awangsari Puttrisia Soenarto</p>
+      <p>Email : M258d4kx1912@bangkit.academy</p>
+      <p>ID Dicoding : M258d4kx1912</p>
+    </header>
+
+    <section>
+      <h2>Pertanyaan Bisnis</h2>
+      <ul>
+        <li>Berapa jumlah persewaan sepeda dalam jam pada hari libur?</li>
+        <li>
+          Bagaimana cara jumlah rental sepeda bisa naik digunakan oleh pengguna
+          di hari kerja?
+        </li>
+        <li>Berapa jumlah sepeda yang digunakan pada hari libur?</li>
+        <li>Hubungan jumlah pengguna register dengan suhu?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Import Package/Library</h2>
+      <code
+        >import pandas as pd<br />import plotly.express as px<br />import
+        warnings</code
+      >
+    </section>
+
+    <section>
+      <h2>Data Wrangling</h2>
+      <h3>Gathering Data</h3>
+      <code
+        >df_day = pd.read_csv("Bike-sharing-dataset/day.csv")<br />df_hour =
+        pd.read_csv("Bike-sharing-dataset/hour.csv")</code
+      >
+      <h3>Cleaning Data</h3>
+      <code
+        >df_day["dteday"] = pd.to_datetime(df_day["dteday"])<br />df_hour["dteday"]
+        = pd.to_datetime(df_hour["dteday"])</code
+      >
+    </section>
+
+    <section>
+      <h2>Exploratory Data Analysis (EDA)</h2>
+      <img src="distribusi_data.png" alt="Distribusi Data" />
+    </section>
+
+    <section>
+      <h2>Visualization & Explanatory Analysis</h2>
+      <img src="scatter_plot.png" alt="Scatter Plot" />
+    </section>
+
+    <footer>
+      <h2>Conclusion</h2>
+      <p>
+        Pendistribusian sepeda beraktivitas pada perkiraan sore menuju petang,
+        dengan jumlah sewa mencapai kurang lebih 1000 dan terjadi pelonjakan
+        secara jelas sejak pagi hari.
+      </p>
+      <p>
+        Jumlah rental sepeda mencapai kenaikan ketika menjelang akhir pekan,
+        seperti hari Jumat.
+      </p>
+      <p>
+        Jumlah sepeda yang digunakan saat hari libur kurang lebih mencapai angka
+        7000 yang menandakan mayoritas menunjukkan keminatan dalam bersepeda
+        sangat tinggi.
+      </p>
+      <p>
+        Hubungannya terletak pada situasi cuaca yang terjadi pada saat itu, hal
+        ini juga dapat mempengaruhi minat penyewa dalam bersepeda. Suhu dapat
+        gampang terjadi peningkatan sesuai dengan minat jumlah pengguna pada
+        saat itu.
+      </p>
+    </footer>
+  </body>
+</html>
